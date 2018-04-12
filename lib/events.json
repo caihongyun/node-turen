@@ -1,0 +1,21 @@
+{
+  "0"   : "none",
+  "10"  : "voice coming",
+  "11"  : "voice coming cmd",
+  "12"  : "voice coming nocmd",
+  "20"  : "voice local sleep",
+  "30"  : "voice start",
+  "31"  : "cloud start",
+  "40"  : "voice accept",
+  "41"  : "voice reject",
+  "42"  : "voice cancel",
+  "43"  : "voice error",
+  "44"  : "voice fake",
+  "50"  : "asr begin",
+  "51"  : "asr end",
+  "60"  : "nlp",
+  "70"  : "voice sleep",
+  "80"  : "audio begin",
+  "81"  : "audio end",
+  "90"  : "system exit"
+}

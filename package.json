@@ -1,0 +1,25 @@
+{
+  "name": "@rokid/turen",
+  "version": "1.0.0",
+  "description": "TurenCore client for Node.js",
+  "main": "lib/turen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Rokid/node-turen.git"
+  },
+  "keywords": [
+    "turen",
+    "voice",
+    "trigger",
+    "node"
+  ],
+  "author": "Yazhong Liu <yorkiefixer@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rokid/node-turen/issues"
+  },
+  "homepage": "https://github.com/Rokid/node-turen#readme"
+}
