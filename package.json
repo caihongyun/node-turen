@@ -1,5 +1,5 @@
 {
-  "name": "@rokid/turen",
+  "name": "turen",
   "version": "1.0.0",
   "description": "TurenCore client for Node.js",
   "main": "lib/turen.js",

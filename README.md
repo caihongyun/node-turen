@@ -2,10 +2,15 @@
 
 The Node.js client for TurenCore.
 
+[![NPM version][npm-image]][npm-url]
+
+[npm-image]: https://img.shields.io/npm/v/turen.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/turen
+
 ### Installation
 
 ```sh
-$ npm install @rokid/turen --save
+$ npm install turen --save
 ```
 
 ### Services
