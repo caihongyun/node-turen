@@ -4,6 +4,7 @@ var turen = require('../');
 var SocketConnector = turen.connector.Socket;
 var TurenRpc = turen.client.TurenRpc;
 var TurenEvent = turen.client.TurenEvent;
+var config = require('/data/system/openvoice_profile.json');
 
 process.on('unhandledRejection', (err) => {
   console.log(err && err.stack);
@@ -17,10 +18,10 @@ rpc.makeCall('Restart',
   ['apigwws.open.rokid.com',
   443,
   '/api',
-  'your device type id',
-  'your account key',
-  'your account secret',
-  '0002111753000190']);
+  config.key,
+  config.secret,
+  config.device_type_id,
+  config.device_id]);
 
 var eventClient = new TurenEvent();
 eventClient.on('event', (event) => {
