@@ -1,34 +1,32 @@
 'use strict';
 
-var turen = require('../');
-var SocketConnector = turen.connector.Socket;
-var TurenRpc = turen.client.TurenRpc;
-var TurenEvent = turen.client.TurenEvent;
+var TurenSpeech = require('../').TurenSpeech;
 var config = require('/data/system/openvoice_profile.json');
 
 process.on('unhandledRejection', (err) => {
   console.log(err && err.stack);
 });
 
-var rpc = new TurenRpc(null, {
-  autoConnects: true,
+var options = {
+  host: 'apigwws.open.rokid.com',
+  port: 443,
+  key: config.key,
+  secret: config.secret,
+  deviceTypeId: config.device_type_id,
+  deviceId: config.device_id,
+};
+var speech = new TurenSpeech();
+speech.on('asr end', (asr) => {
+  console.log('asr >>>', asr);
 });
-
-rpc.makeCall('Restart',
-  ['apigwws.open.rokid.com',
-  443,
-  '/api',
-  config.key,
-  config.secret,
-  config.device_type_id,
-  config.device_id]);
-
-var eventClient = new TurenEvent();
-eventClient.on('event', (event) => {
-  console.log(event.type, {
-    asr: event.asr,
-    nlp: event.nlp,
-    action: event.action,
-  });
+speech.on('nlp', (res) => {
+  console.log('res >>>', res);
 });
-eventClient.start();
+// speech.on('raw event', (data) => {
+//   // console.log(data.type, {
+//   //   asr: data.asr,
+//   //   nlp: data.nlp,
+//   //   action: data.action,
+//   // });
+// });
+speech.start(options);

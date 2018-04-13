@@ -13,6 +13,35 @@ The Node.js client for TurenCore.
 $ npm install turen --save
 ```
 
+### Get Started
+
+```js
+var options = {
+  host: 'apigwws.open.rokid.com',
+  port: 443,
+  key: 'rokid openplatform key',
+  secret: 'rokid openplatform secret',
+  deviceTypeId: 'rokid device type id',
+  deviceId: 'rokid device id',
+};
+var speech = new TurenSpeech();
+speech.on('voice coming', (event) => {
+  // voice coming
+});
+speech.on('voice accept', (event) => {
+  // voice accept
+});
+speech.on('asr end', (asr, event) => {
+  // asr
+});
+speech.on('nlp', (response, event) => {
+  // response.asr
+  // response.nlp
+  // response.action
+});
+speech.start(options);
+```
+
 ### Services
 
 TurenCore provides multiple socket-based services for different functionalities.
