@@ -3,7 +3,7 @@
   "10"  : "voice coming",
   "11"  : "voice coming cmd",
   "12"  : "voice coming nocmd",
-  "20"  : "voice local sleep",
+  "20"  : "voice local awake",
   "30"  : "voice start",
   "31"  : "cloud start",
   "40"  : "voice accept",
