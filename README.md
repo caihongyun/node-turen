@@ -103,6 +103,19 @@ var writable = fs.createWriteStream('/path/to/your/file');
 writable.pipe(audioStream);
 ```
 
+#### Logger
+
+You also could access to TurenCore's logs by `TurenLogger`:
+
+```js
+var TurenLogger = require('turen').client.TurenLogger;
+var logger = new TurenLogger();
+logger.on('data', (data) => {
+  // receives the data
+});
+logger.readStart();
+```
+
 ### License
 
 MIT
