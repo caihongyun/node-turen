@@ -1,6 +1,6 @@
 {
   "name": "turen",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "TurenCore client for Node.js",
   "main": "lib/turen.js",
   "scripts": {
