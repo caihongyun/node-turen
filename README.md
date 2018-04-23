@@ -115,6 +115,17 @@ audioWritable.send(new Buffer(1024));
 audioWritable.send(fs.createReadStream('/path/to/your/pcm/file'));
 ```
 
+The available type values of `TurenAudio` is:
+
+- `mic_in` as a `Readable` stream to pull the raw data, its format 
+  depends on your micphone configuration.
+- `bf_out` as a `Readable` stream to pull the pcm after BF.
+- `aec_out` as a `Readable` stream to pull the pcm after AEC.
+- `codec_in` as a `Readable` stream to pull the pcm before opu codec.
+- `speech_in` as a `Readable` stream to pull the opu before uploading
+  to cloud speech service.
+- `mic_out` as a `Writable` stream to push raw data.
+
 #### Logger
 
 You also could access to TurenCore's logs by `TurenLogger`:
