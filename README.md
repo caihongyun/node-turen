@@ -86,6 +86,23 @@ A complete events list is at [here](lib/events.json).
 Audio services is also to debug with TurenCore, we could pull audio streams from every
 stage like AEC/BF/VAD.
 
+You could use it as a socket handle:
+
+```js
+var audioStream = new TurenAudio('mic_in');
+audioStream.on('data', (chunk) => {
+  // got data
+});
+audioStream.readStart();
+```
+
+Streaming API also could use used:
+
+```js
+var writable = fs.createWriteStream('/path/to/your/file');
+writable.pipe(audioStream);
+```
+
 ### License
 
 MIT
