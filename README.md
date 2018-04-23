@@ -83,7 +83,7 @@ A complete events list is at [here](lib/events.json).
 
 #### Audio
 
-Audio services is also to debug with TurenCore, we could pull audio streams from every
+Audio service is also to debug with TurenCore, we could pull audio streams from every
 stage like AEC/BF/VAD.
 
 You could use it as a socket handle:
@@ -93,7 +93,7 @@ var audioStream = new TurenAudio('mic_in');
 audioStream.on('data', (chunk) => {
   // got data
 });
-audioStream.readStart();
+audioStream.connect();
 ```
 
 Streaming API also could use used:
@@ -101,6 +101,18 @@ Streaming API also could use used:
 ```js
 var writable = fs.createWriteStream('/path/to/your/file');
 writable.pipe(audioStream);
+```
+
+Push audio data to TurenCore:
+
+```js
+var audioWritable = new TurenAudio('mic_out');
+await audioWritable.connect();
+
+// write a buffer
+audioWritable.send(new Buffer(1024));
+// write a readable stream
+audioWritable.send(fs.createReadStream('/path/to/your/pcm/file'));
 ```
 
 #### Logger
@@ -113,7 +125,7 @@ var logger = new TurenLogger();
 logger.on('data', (data) => {
   // receives the data
 });
-logger.readStart();
+logger.connect();
 ```
 
 ### License
