@@ -120,11 +120,20 @@ The available type values of `TurenAudio` is:
 - `mic_in` as a `Readable` stream to pull the raw data, its format 
   depends on your micphone configuration.
 - `bf_out` as a `Readable` stream to pull the pcm after BF.
+- `bf4_out` as a `Readable` stream to pull the pcm after BF with selected 4 channels.
+- `bf12_out` as a `Readable` stream to pull the pcm after BF with the full 12 channels.
 - `aec_out` as a `Readable` stream to pull the pcm after AEC.
 - `codec_in` as a `Readable` stream to pull the pcm before opu codec.
 - `speech_in` as a `Readable` stream to pull the opu before uploading
   to cloud speech service.
 - `mic_out` as a `Writable` stream to push raw data.
+
+The following types are available only for our CTC model:
+
+- `ctc.line_0` as a `Readable` stream to pull the pcm to the CTC line 0.
+- `ctc.line_1` as a `Readable` stream to pull the pcm to the CTC line 1.
+- `ctc.line_2` as a `Readable` stream to pull the pcm to the CTC line 2.
+- `ctc.line_3` as a `Readable` stream to pull the pcm to the CTC line 3.
 
 #### Logger
 
