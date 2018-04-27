@@ -39,6 +39,9 @@ speech.on('nlp', (response, event) => {
   // response.nlp
   // response.action
 });
+speech.on('disconnect', (socketType/* event or rpc */) => {
+  // got if some event is disconnected
+});
 speech.start(options);
 ```
 
