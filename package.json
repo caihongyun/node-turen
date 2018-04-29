@@ -4,7 +4,7 @@
   "description": "TurenCore client for Node.js",
   "main": "lib/turen.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "sh test/runtests.sh"
   },
   "repository": {
     "type": "git",
